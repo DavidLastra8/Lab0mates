@@ -122,16 +122,28 @@ int main() {
             int max_row = mat.block(col, col, sz - col, 1).cwiseAbs().maxCoeff() + col;
             int max_val = -1;
             
-            // Intercambiar filas si es necesario
-            if (max_row != col) {
-                mat.row(max_row).swap(mat.row(col));
-                swap(b(max_row), b(col));
+            if (mat(col, col) == 0) {
+                cout << "La matriz es singular" << endl;
+                break;
             }
+            if (col + 1 < sz) {
+                // Intercambiar filas si es necesario
+                if (col + 1 < sz) {
+                    // Intercambiar filas si es necesario
+                    if (max_row != col) {
+                        mat.row(max_row).swap(mat.row(col));
+                        swap(b(max_row), b(col));
+                    }
 
-            // Realizar la eliminación de Gauss en la columna actual
-            VectorXd ratios = mat.block(col + 1, col, sz - col - 1, 1) / mat(col, col);
-            mat.block(col + 1, col, sz - col - 1, sz - col) -= ratios * mat.block(col, col, 1, sz - col);
-            b.segment(col + 1, sz - col - 1) -= ratios * b(col);
+                    // Realizar la eliminación de Gauss en la columna actual
+                    if (col + 1 < sz) {
+                        VectorXd ratios = mat.block(col + 1, col, sz - col - 1, 1) / mat(col, col);
+                        mat.block(col + 1, col, sz - col - 1, sz - col) -= ratios * mat.block(col, col, 1, sz - col);
+                        b.segment(col + 1, sz - col - 1) -= ratios * b(col);
+                    }
+                }
+            }
+ 
         }
         double* solucion = new double[sz];
         for (int i = sz - 1; i >= 0; i--) {
