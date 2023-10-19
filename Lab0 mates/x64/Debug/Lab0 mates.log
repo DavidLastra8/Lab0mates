@@ -1,0 +1,4 @@
+﻿  Source.cpp
+C:\Users\davidla8\Documents\GitHub\Lab0mates\Lab0 mates\Source.cpp(48,62): warning C4244: '-=': conversion from 'double' to 'int', possible loss of data
+C:\Users\davidla8\Documents\GitHub\Lab0mates\Lab0 mates\Source.cpp(122,25): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  Lab0 mates.vcxproj -> C:\Users\davidla8\Documents\GitHub\Lab0mates\x64\Debug\Lab0 mates.exe
