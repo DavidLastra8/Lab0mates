@@ -38,7 +38,7 @@ int main() {
     cout << "Choose what type of loop you want (1,2,3): " << endl;
     cin >> typeGauss;
 
-    if (typeGauss == 3) {
+    if (typeGauss == 3) { //ForwardThreeLoops Code
         for (int Mati = 0; Mati <= sz - 1; Mati++) {
 
             for (int Matj = Mati + 1; Matj <= sz - 1; Matj++) {
@@ -58,7 +58,55 @@ int main() {
             }
             solucion[i] /= Mat[i][i];
         }
+        bool incompatible = false;
+        double epsilon = 1e-6;
+        for (int i = 0; i < sz; i++) {
+            for (int j = 0; j < sz + 1; j++) {
+                if (fabs(Mat[i][j]) < epsilon) {
+                    Mat[i][j] = 0.0;
+                }
+            }
+        }
+        for (int i = 0; i < sz; i++) {
+            bool allZero = true;
+            for (int j = 0; j < sz; j++) {
+                if (Mat[i][j] != 0) {
+                    allZero = false;
+                    break;
+                }
+            }
+            if (allZero && Mat[i][sz] != 0) {
+                incompatible = true;
+                break;
+            }
+        }
 
+        if (incompatible) {
+            cout << "El sistema es incompatible." << endl;
+        }
+        else{
+            // Verificar si es determinado o indeterminado
+            int rank = 0;
+            for (int i = 0; i < sz; i++) {
+                bool allZero = true;
+                for (int j = 0; j < sz; j++) {
+                    if (Mat[i][j] != 0) {
+                        allZero = false;
+                        break;
+                    }
+                }
+                if (!allZero) {
+                    rank++;
+                }
+            }
+
+            if (rank == sz) {
+                cout << "El sistema es compatible determinado." << endl;
+            }
+            else {
+                cout << "El sistema es compatible indeterminado." << endl;
+            }
+        }
         cout << "Solucion del sistema:" << endl;
         for (int i = 0; i < sz; i++) {
             cout << "x" << i + 1 << " = " << solucion[i] << endl;
@@ -77,7 +125,7 @@ int main() {
 
         return 0;
     }
-    if (typeGauss == 2) {
+    if (typeGauss == 2) { //ForwardTwoLoops Code
 
         MatrixXd mat(sz, sz);
         for (int i = 0; i < sz; i++) {
@@ -93,7 +141,55 @@ int main() {
             }
             solucion[i] /= Mat[i][i];
         }
+        bool incompatible = false;
+        double epsilon = 1e-6;
+        for (int i = 0; i < sz; i++) {
+            for (int j = 0; j < sz + 1; j++) {
+                if (fabs(Mat[i][j]) < epsilon) {
+                    Mat[i][j] = 0.0;
+                }
+            }
+        }
+        for (int i = 0; i < sz; i++) {
+            bool allZero = true;
+            for (int j = 0; j < sz; j++) {
+                if (Mat[i][j] != 0) {
+                    allZero = false;
+                    break;
+                }
+            }
+            if (allZero && Mat[i][sz] != 0) {
+                incompatible = true;
+                break;
+            }
+        }
 
+        if (incompatible) {
+            cout << "El sistema es incompatible." << endl;
+        }
+        else {
+            // Verificar si es determinado o indeterminado
+            int rank = 0;
+            for (int i = 0; i < sz; i++) {
+                bool allZero = true;
+                for (int j = 0; j < sz; j++) {
+                    if (Mat[i][j] != 0) {
+                        allZero = false;
+                        break;
+                    }
+                }
+                if (!allZero) {
+                    rank++;
+                }
+            }
+
+            if (rank == sz) {
+                cout << "El sistema es compatible determinado." << endl;
+            }
+            else {
+                cout << "El sistema es compatible indeterminado." << endl;
+            }
+        }
         cout << "Solucion del sistema:" << endl;
         for (int i = 0; i < sz; i++) {
             cout << "x" << i + 1 << " = " << solucion[i] << endl;
@@ -104,16 +200,16 @@ int main() {
         auto stop = chrono::high_resolution_clock::now();
         auto duration = chrono::duration_cast<chrono::milliseconds>(stop - start);
         cout << "duration: " << duration.count() << " milliseconds" << endl;
+
         for (int i = 0; i < sz; i++) {
             delete[] Mat[i];
         }
         delete[] Mat;
 
         return 0;
-
     }
 
-    if (typeGauss == 1) {
+    if (typeGauss == 1) { //ForwardOneLoop Code
 
         MatrixXd mat (sz, sz);
         int columns = mat.cols() - 1;
@@ -135,13 +231,65 @@ int main() {
             }
             solucion[i] /= Mat[i][i];
         }
+        bool incompatible = false;
+        double epsilon = 1e-6;
+        for (int i = 0; i < sz; i++) {
+            for (int j = 0; j < sz + 1; j++) {
+                if (fabs(Mat[i][j]) < epsilon) {
+                    Mat[i][j] = 0.0;
+                }
+            }
+        }
+        for (int i = 0; i < sz; i++) {
+            bool allZero = true;
+            for (int j = 0; j < sz; j++) {
+                if (Mat[i][j] != 0) {
+                    allZero = false;
+                    break;
+                }
+            }
+            if (allZero && Mat[i][sz] != 0) {
+                incompatible = true;
+                break;
+            }
+        }
 
+        if (incompatible) {
+            cout << "El sistema es incompatible." << endl;
+        }
+        else {
+            // Verificar si es determinado o indeterminado
+            int rank = 0;
+            for (int i = 0; i < sz; i++) {
+                bool allZero = true;
+                for (int j = 0; j < sz; j++) {
+                    if (Mat[i][j] != 0) {
+                        allZero = false;
+                        break;
+                    }
+                }
+                if (!allZero) {
+                    rank++;
+                }
+            }
+
+            if (rank == sz) {
+                cout << "El sistema es compatible determinado." << endl;
+            }
+            else {
+                cout << "El sistema es compatible indeterminado." << endl;
+            }
+        }
         cout << "Solucion del sistema:" << endl;
         for (int i = 0; i < sz; i++) {
             cout << "x" << i + 1 << " = " << solucion[i] << endl;
         }
 
         delete[] solucion;
+
+        auto stop = chrono::high_resolution_clock::now();
+        auto duration = chrono::duration_cast<chrono::milliseconds>(stop - start);
+        cout << "duration: " << duration.count() << " milliseconds" << endl;
 
         for (int i = 0; i < sz; i++) {
             delete[] Mat[i];
