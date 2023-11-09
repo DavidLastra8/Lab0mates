@@ -20,15 +20,15 @@ int main() {
 
     int** Mat = new int* [sz];
 
-   /* cout << "Enter the elements of the matrix:" << endl;
+    cout << "Enter the elements of the matrix:" << endl;
     for (int i = 0; i < sz; i++) {
         Mat[i] = new int[sz + 1];
         for (int j = 0; j < sz + 1; j++) {
             cout << "Mat[" << i << "][" << j << "]: ";
             cin >> Mat[i][j];
         }
-    }*/
-    for (int i = 0; i < sz; i++) {
+    }
+    /*for (int i = 0; i < sz; i++) {
         Mat[i] = new int[sz + 1];
         for (int j = 0; j < sz + 1; j++) {
             Mat[i][j] = rand() % 100;
@@ -40,7 +40,7 @@ int main() {
             std::cout << Mat[i][j] << " ";
         }
         std::cout << std::endl;
-    }
+    }*/
     auto start = chrono::high_resolution_clock::now();
     int typeGauss = 0;
     cout << "Choose what type of loop you want (1,2,3): " << endl;
@@ -299,12 +299,10 @@ int main() {
         auto duration = chrono::duration_cast<chrono::milliseconds>(stop - start);
         cout << "duration: " << duration.count() << " milliseconds" << endl;
 
-        for (int i = 0; i < sz; i++) {
-            delete[] Mat[i];
-        }
-        delete[] Mat;
+        // Deallocate memory...
 
         return 0;
     }
+        
 }
 
