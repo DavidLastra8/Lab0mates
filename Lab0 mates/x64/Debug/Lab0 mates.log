@@ -1,8 +1,8 @@
 ﻿  Source.cpp
-C:\Users\Asus Rog Strix\Documents\GitHub\Lab0mates\Lab0 mates\Source.cpp(48,62): warning C4244: '-=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Asus Rog Strix\Documents\GitHub\Lab0mates\Lab0 mates\Source.cpp(66,33): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Asus Rog Strix\Documents\GitHub\Lab0mates\Lab0 mates\Source.cpp(149,33): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\Asus Rog Strix\Documents\GitHub\Lab0mates\Lab0 mates\Source.cpp(215,21): warning C4244: 'inicializando': conversión de 'Eigen::Index' a 'int'; posible pérdida de datos
-C:\Users\Asus Rog Strix\Documents\GitHub\Lab0mates\Lab0 mates\Source.cpp(216,18): warning C4244: 'inicializando': conversión de 'Eigen::Index' a 'int'; posible pérdida de datos
-C:\Users\Asus Rog Strix\Documents\GitHub\Lab0mates\Lab0 mates\Source.cpp(239,33): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Asus Rog Strix\Documents\GitHub\Lab0mates\Lab0 mates\Source.cpp(56,62): warning C4244: '-=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Asus Rog Strix\Documents\GitHub\Lab0mates\Lab0 mates\Source.cpp(74,33): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Asus Rog Strix\Documents\GitHub\Lab0mates\Lab0 mates\Source.cpp(157,33): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Asus Rog Strix\Documents\GitHub\Lab0mates\Lab0 mates\Source.cpp(223,21): warning C4244: 'inicializando': conversión de 'Eigen::Index' a 'int'; posible pérdida de datos
+C:\Users\Asus Rog Strix\Documents\GitHub\Lab0mates\Lab0 mates\Source.cpp(224,18): warning C4244: 'inicializando': conversión de 'Eigen::Index' a 'int'; posible pérdida de datos
+C:\Users\Asus Rog Strix\Documents\GitHub\Lab0mates\Lab0 mates\Source.cpp(247,33): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
   Lab0 mates.vcxproj -> C:\Users\Asus Rog Strix\Documents\GitHub\Lab0mates\x64\Debug\Lab0 mates.exe

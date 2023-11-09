@@ -20,6 +20,14 @@ int main() {
 
     int** Mat = new int* [sz];
 
+   /* cout << "Enter the elements of the matrix:" << endl;
+    for (int i = 0; i < sz; i++) {
+        Mat[i] = new int[sz + 1];
+        for (int j = 0; j < sz + 1; j++) {
+            cout << "Mat[" << i << "][" << j << "]: ";
+            cin >> Mat[i][j];
+        }
+    }*/
     for (int i = 0; i < sz; i++) {
         Mat[i] = new int[sz + 1];
         for (int j = 0; j < sz + 1; j++) {
